@@ -1,0 +1,2 @@
+#!/bin/bash
+nohup ../update-feeds.sh < /dev/null  &>> OPENSHIFT_PHP_LOG_DIR/update-feeds-cron.log &

@@ -1,0 +1,3 @@
+[submodule "php/ttrss"]
+	path = php/ttrss
+	url = https://github.com/gothfox/Tiny-Tiny-RSS.git

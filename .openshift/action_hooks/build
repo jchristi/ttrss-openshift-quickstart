@@ -3,3 +3,17 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+
+TMP_DIR="$OPENSHIFT_DATA_DIR/tmp"
+LOCK_DIR="$OPENSHIFT_DATA_DIR/lock"
+CACHE_DIR="$OPENSHIFT_DATA_DIR/cache"
+
+mkdir -p -m 777 "$TMP_DIR"
+mkdir -p -m 777 "$LOCK_DIR"
+mkdir -p -m 777 "$CACHE_DIR/export"
+mkdir -p -m 777 "$CACHE_DIR/images"
+mkdir -p -m 777 "$CACHE_DIR/js"
+mkdir -p -m 777 "$OPENSHIFT_DATA_DIR/feed-icons"
+
+ln -sf "$OPENSHIFT_DATA_DIR/feed-icons" "$OPENSHIFT_REPO_DIR/php/ttrss/feed-icons"
+chmod -R 777 "$OPENSHIFT_DATA_DIR/feed-icons"
